@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Contact - Alan Chacko{% endblock %}
+
+{% block content %}
+<div class="page-content">
+    <div class="section-header">
+        <h1><i class="fa-solid fa-envelope"></i> Contact Me</h1>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Feel free to reach out for opportunities, or just to say hello!</p>
+            
+            <div class="contact-items">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>alanchacko42@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Perth, Western Australia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h4>Connect with me</h4>
+                <div class="social-icons">
+                    <a href="www.linkedin.com/in/alan-chacko-bb3b871a0" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <!-- <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a> -->
+                    <!-- <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a> -->
+                </div>
+            </div>
+        </div>
+
+        <form method="POST">
+    {{ form.hidden_tag() }}
+
+    {{ form.name.label }}
+    {{ form.name() }}
+
+    {{ form.email.label }}
+    {{ form.email() }}
+
+    {{ form.message.label }}
+    {{ form.message() }}
+
+    {{ form.submit() }}
+</form>
+    </div>
+</div>
+{% endblock %}

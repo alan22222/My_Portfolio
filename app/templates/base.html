@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>{% block title %}Alan Chacko - Portfolio{% endblock %}</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img width="30" height="30" class="image-logo"
+                    src="https://img.icons8.com/puffy/32/triangle-stroked.png" alt="triangle-stroked" />
+                alan.<span class="word">dev</span>
+            </div>
+
+            <nav>
+                <a href="{{ url_for('main.about') }}" class="{% if request.endpoint == 'main.home' %}active{% endif %}">Home</a>
+                <a href="{{ url_for('main.projects') }}" class="{% if request.endpoint == 'main.projects' %}active{% endif %}">Projects</a>
+                <a href="{{ url_for('main.contact') }}" class="{% if request.endpoint == 'main.contact' %}active{% endif %}">Contact</a>
+            </nav>
+
+            <div class="search-box">
+                <input type="search" placeholder="Search..." />
+                <button type="button"><i class="fa-solid fa-search"></i></button>
+            </div>
+
+            <div class="icons">
+                <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </header>
+
+        <aside>
+            <div class="sidebar">
+                <!-- <a href="{{ url_for('main.home') }}" class="{% if request.endpoint == 'main.home' %}active{% endif %}">
+                    <i class="fa-solid fa-house"></i> Introduction
+                </a> -->
+                <a href="{{ url_for('main.about') }}" class="{% if request.endpoint == 'main.about' %}active{% endif %}">
+                    <i class="fa-solid fa-user"></i> About
+                </a>
+                <a href="{{ url_for('main.projects') }}" class="{% if request.endpoint == 'main.projects' %}active{% endif %}">
+                    <i class="fa-solid fa-diagram-project"></i> Projects
+                </a>
+                <a href="{{ url_for('main.skills') }}" class="{% if request.endpoint == 'main.skills' %}active{% endif %}">
+                    <i class="fa-solid fa-code"></i> Skills
+                </a>
+                <a href="{{ url_for('main.experience') }}" class="{% if request.endpoint == 'main.experience' %}active{% endif %}">
+                    <i class="fa-solid fa-briefcase"></i> Experience
+                </a>
+                <a href="{{ url_for('main.education') }}" class="{% if request.endpoint == 'main.education' %}active{% endif %}">
+                    <i class="fa-solid fa-graduation-cap"></i> Education
+                </a>
+                <a href="{{ url_for('main.contact') }}" class="{% if request.endpoint == 'main.contact' %}active{% endif %}">
+                    <i class="fa-solid fa-envelope"></i> Contact
+                </a>
+            </div>
+        </aside>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

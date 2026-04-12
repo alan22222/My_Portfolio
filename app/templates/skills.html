@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Skills - Alan Chacko{% endblock %}
+
+{% block content %}
+<div class="page-content">
+    <div class="section-header">
+        <h1><i class="fa-solid fa-code"></i> Skills</h1>
+    </div>
+
+    <div class="skills-section">
+        <h2>Programming Languages</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <i class="fa-brands fa-python"></i>
+                <span>Python</span>
+                <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <i class="fa-solid fa-brands fa-java java-icon"></i>
+                <span>Java</span>
+                <div class="skill-bar"><div class="skill-progress" style="width: 68%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <i class="fa-brands fa-js"></i>
+                <span>JavaScript</span>
+                <div class="skill-bar"><div class="skill-progress" style="width: 60%;"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="skills-section">
+        <h2>Web Development</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <i class="fa-brands fa-html5"></i>
+                <span>HTML/CSS</span>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <i class="fa-solid fa-flask"></i>
+                <span>Flask/Django</span>
+                <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="skills-section">
+        <h2>Tools & Technologies</h2>
+        <div class="tools-grid">
+            <div class="tool-item"><i class="fa-brands fa-git-alt"></i> Git</div>
+            <div class="tool-item"><i class="fa-brands fa-linux"></i> Linux</div>
+            <div class="tool-item"><i class="fa-solid fa-database"></i> SQL</div>
+            <div class="tool-item"><i class="fa-brands fa-docker"></i> Docker</div>
+            <div class="tool-item"><i class="fa-solid fa-terminal"></i> Bash</div>
+            <div class="tool-item"><i class="fa-solid fa-code-branch"></i> VS Code</div>
+            <div class="tool-item"><i class="fa-solid fa-brands fa-aws aws-icon"></i> AWS(EC2,s3)</div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
