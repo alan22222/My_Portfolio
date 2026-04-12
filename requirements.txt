@@ -6,10 +6,12 @@ email-validator==2.3.0
 Flask==2.3.3
 Flask-Mail==0.10.0
 Flask-WTF==1.2.2
+gunicorn==25.3.0
 idna==3.11
 itsdangerous==2.2.0
 Jinja2==3.1.6
 MarkupSafe==3.0.3
+packaging==26.0
 python-dotenv==1.2.2
 Werkzeug==2.3.8
 WTForms==3.2.1
