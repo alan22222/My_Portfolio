@@ -34,20 +34,23 @@ def contact():
     form = ContactForm()
 
     if form.validate_on_submit():
-        msg = Message(
-            subject="Contact Form Message",
-            sender='alanchacko42@gmail.com',
-            recipients=['alanchacko42@gmail.com'],
-            reply_to=form.email.data
-        )
-        msg.body = f"""
+        try:
+            msg = Message(
+                subject="Contact Form Message",
+                sender='alanchacko42@gmail.com',
+                recipients=['alanchacko42@gmail.com'],
+                reply_to=form.email.data
+            )
+            msg.body = f"""
 From: {form.name.data} <{form.email.data}>
 
 {form.message.data}
 """
-        mail.send(msg)
-        flash("Message sent successfully!")
-        return redirect(url_for('main.contact'))    
+            mail.send(msg)
+            flash("Message sent successfully!")
+            return redirect(url_for('main.contact'))
+        except Exception as e:
+            return f"Mail failed: {e}"
 
     if request.method == 'POST':
         flash(str(form.errors))
